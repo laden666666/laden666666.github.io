@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>picker.js</title>
+  <meta name="description" content="高仿IOS的PickerView的JavaScript插件，3D形式的滚轮选择器，同时支持最多三级联动的选择效果，支持pc端和移动端两种平台浏览器。">
+  <meta name="author" content="Vincent Garreau" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" media="screen" href="css/style.css">
+  <link rel="stylesheet" media="screen" href="picker.css">
+</head>
+<body>
+
+  <header>
+    <div id="particles-js"></div>
+    <div id="header">
+      <h1>picker</h1>
+      <p>高仿IOS的PickerView的JavaScript插件，3D形式的滚轮选择器，同时支持最多三级联动的选择效果，支持pc端和移动端两种平台浏览器。</p>
+      <div class="btns">
+        <button class="btn">查看源码</button>
+        <button class="btn">下载</button>
+      </div>
+    </div>
+  </header>
+  <div class="example">
+    <h4>简单的选择器使用</h4>
+    <a id="example1" class="selector">无</a>
+    <code>
+      new picker({
+        cols: [&#x27;java&#x27;,&#x27;c#&#x27;,&#x27;JavaScript&#x27;,&#x27;php&#x27;,&#x27;Python&#x27;],
+        onOkClick: function (values) {
+          document.querySelector(&#x27;#example1&#x27;).textContent = (values[0]);
+        },
+      })
+    </code>
+  </div>
+  <div class="example">
+    <h4>前缀与后缀的使用</h4>
+    <a id="example2" class="selector">无</a>
+    <code>
+      new picker({
+        cols: [&#x27;java&#x27;,&#x27;c#&#x27;,&#x27;JavaScript&#x27;,&#x27;php&#x27;,&#x27;Python&#x27;],
+        onOkClick: function (values) {
+          document.querySelector(&#x27;#example1&#x27;).textContent = (values[0]);
+        },
+      })
+    </code>
+  </div>
+  <div class="example">
+    <h4>多滚轮选择器</h4>
+    <a id="example3" class="selector">无</a>
+    <code></code>
+  </div>
+  <div class="example">
+    <h4></h4>
+    <a id="example4" class="selector"></a>
+    <code></code>
+  </div>
+  <div class="example">
+    <h4></h4>
+    <a id="example5" class="selector"></a>
+    <code></code>
+  </div>
+  <div class="example">
+    <h4></h4>
+    <a id="example6" class="selector"></a>
+    <code></code>
+  </div>
+  <div class="example">
+    <h4></h4>
+    <a id="example7" class="selector"></a>
+    <code></code>
+  </div>
+  <div class="example">
+    <h4></h4>
+    <a id="example8" class="selector"></a>
+    <code></code>
+  </div>
+  
+  
+  <!-- scripts -->
+  <script src="js/particles.min.js"></script>
+  <script src="picker.js"></script>
+  <script src="js/app.js"></script>
+
+
+</body>
+</html>
