@@ -10753,6 +10753,8 @@ return /******/ (function(modules) { // webpackBootstrap
 
 			var offsetY = event.touches ?  event.touches[0].pageY - that.offsetTop : event.pageY - that.offsetTop;
 			that.startDrag(offsetY);
+			event.preventDefault();
+			event.stopPropagation();
 		}
 		this.dom[0].addEventListener("touchstart", startDrag);
 		this.dom[0].addEventListener("mousedown", startDrag);
@@ -10761,6 +10763,8 @@ return /******/ (function(modules) { // webpackBootstrap
 		function drag(event){
 			var offsetY = event.touches ?  event.touches[0].pageY - that.offsetTop : event.pageY - that.offsetTop;
 			that.drag(offsetY);
+			event.preventDefault();
+			event.stopPropagation();
 		}
 		this.dom[0].addEventListener("touchmove", drag);
 		this.dom[0].addEventListener("mousemove", drag);
