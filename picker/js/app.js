@@ -134,6 +134,7 @@ particlesJS('particles-js',
 
 var picker1 = new picker({
   cols: ['java','c#','JavaScript','php','Python'],
+  title:"你喜欢的语言",
   onOkClick: function (values) {
     document.querySelector('#example1').textContent = (values[0]);
   },
@@ -144,10 +145,11 @@ document.querySelector('#example1').addEventListener('click', function () {
 
 var picker2 = new picker({
   cols: [{
-    prefix: '第',
+    prefix: '   第',
     values: ['一', '二', '三', '四', '五'],
-    suffix: '章',
+    suffix: '章  ',
   }],
+  title:"选择章节",
   onOkClick: function (values) {
     document.querySelector('#example2').textContent = (values[0]);
   },
@@ -159,10 +161,11 @@ document.querySelector('#example2').addEventListener('click', function () {
 
 var picker3 = new picker({
   cols: [{
-   	values:['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月']
+   	values:["1日","2日","3日","4日","5日","6日","7日","8日","9日","10日","11日","12日","13日","14日","15日","16日","17日","18日","19日","20日","21日","22日","23日","24日","25日","26日","27日","28日","29日","30日","31日"]
   },{
  	values:['星期一','星期二','星期三','星期四','星期五','星期六','星期日']
   }],
+  title:"今天是几号?",
   onOkClick: function (values) {
     document.querySelector('#example3').textContent = (values[0] + "," + values[1]);
   },

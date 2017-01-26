@@ -61,370 +61,11 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 1 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/**
-	 * 调试样式和js时候使用的文件入口。在调试模式下,会将样式文件和js文件打包在一起。而生存环境下会分开打包
-	 */
-	__webpack_require__(2);
-
-	module.exports = __webpack_require__(6);
-
-/***/ },
-/* 2 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-
-	// load the styles
-	var content = __webpack_require__(3);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(5)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!./../../node_modules/css-loader/index.js!./../../node_modules/sass-loader/index.js!./style.scss", function() {
-				var newContent = require("!!./../../node_modules/css-loader/index.js!./../../node_modules/sass-loader/index.js!./style.scss");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-/* 3 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(4)();
-	// imports
-
-
-	// module
-	exports.push([module.id, ".picker-cover {\n  position: absolute;\n  background: rgba(32, 32, 32, 0.4);\n  top: 0;\n  left: 0;\n  right: 0;\n  bottom: 0;\n  user-select: none; }\n\n.picker.picker-frame {\n  position: fixed;\n  bottom: 0;\n  right: 0;\n  left: 0;\n  height: auto;\n  background: #fff;\n  width: 100vmin;\n  margin: 0 auto;\n  -webkit-user-select: none;\n  user-select: none; }\n\n.picker .picker-head {\n  width: 100vmin;\n  height: 15vmin;\n  padding: 3vmin 5vmin;\n  box-sizing: border-box;\n  background-color: #f7f7f8;\n  display: flex;\n  font-size: 5vmin;\n  line-height: 9vmin; }\n\n.picker .picker-title {\n  text-align: center;\n  flex: 1;\n  height: 9vmin;\n  margin: 0;\n  color: #3d4145;\n  overflow: hidden;\n  white-space: nowrap;\n  text-overflow: ellipsis; }\n\n.picker .picker-btn-cancel, .picker .picker-btn-ok {\n  color: #0894ec;\n  border: 0;\n  text-align: center; }\n\n.picker .picker-btn-cancel:hover, .picker .picker-btn-ok:hover {\n  cursor: pointer; }\n\n.picker .picker-btn-cancel:active, .picker .picker-btn-ok:active {\n  color: #0675bb; }\n\n.picker .picker-selected {\n  display: none;\n  margin-right: 2vmin; }\n\n.picker .picker-body {\n  width: 100vmin;\n  display: flex;\n  justify-content: center;\n  position: relative;\n  padding: 0 calc(100vmin * 0.220);\n  box-sizing: border-box;\n  -webkit-mask-box-image: -webkit-linear-gradient(bottom, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3) 5%, rgba(255, 255, 255, 0.5) 41.6%, #fff 41.7%, #fff 58.3%, rgba(255, 255, 255, 0.5) 58.4%, rgba(255, 255, 255, 0.3) 95%, rgba(255, 255, 255, 0.3));\n  -webkit-mask-box-image: linear-gradient(bottom, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3) 5%, rgba(255, 255, 255, 0.5) 41.6%, #fff 41.7%, #fff 58.3%, rgba(255, 255, 255, 0.5) 58.4%, rgba(255, 255, 255, 0.3) 95%, rgba(255, 255, 255, 0.3)); }\n\n.picker .picker-body::before, .picker .picker-body::after {\n  display: block;\n  position: absolute;\n  left: 0;\n  width: 100vmin;\n  border-bottom: 1px solid rgba(0, 0, 0, 0.1);\n  content: '';\n  height: 0;\n  -webkit-pointer-events: none;\n  pointer-events: none; }\n\n.picker .picker-body::after {\n  bottom: 41.6%; }\n\n.picker .picker-body::before {\n  top: 41.6%; }\n\n.picker .picker-wheel {\n  flex-grow: 1;\n  box-sizing: border-box;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: row;\n  position: relative;\n  font-size: 0.553rem; }\n\n.picker .picker-wheel:first-child::before {\n  position: absolute;\n  content: \"\";\n  width: calc(100vmin * 0.220);\n  height: 100%;\n  top: 0;\n  left: calc(100vmin * -0.220); }\n\n.picker .picker-wheel:last-child::after {\n  position: absolute;\n  content: \"\";\n  width: calc(100vmin * 0.220);\n  height: 100%;\n  top: 0;\n  right: calc(100vmin * -0.220); }\n\n.picker .picker-wheel:first-child .picker-label:first-child {\n  margin-left: 2vmin; }\n\n.picker .picker-wheel:last-child .picker-label:last-child {\n  margin-right: 2vmin; }\n\n.picker .picker-label {\n  vertical-align: middle;\n  height: 100%; }\n\n.picker .picker-label::before {\n  display: inline-block;\n  content: '';\n  height: 100%;\n  vertical-align: middle; }\n\n.picker .picker-wheel ul {\n  list-style: none;\n  padding: 0;\n  margin: 0;\n  flex: 1;\n  height: 100%;\n  position: relative;\n  -webkit-transform-style: preserve-3d;\n  transform-style: preserve-3d; }\n\n.picker .picker-wheel li {\n  display: block;\n  width: 100%;\n  text-align: center;\n  position: absolute;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  left: 0;\n  margin: auto auto;\n  -webkit-user-select: none;\n  overflow: hidden;\n  white-space: nowrap;\n  text-overflow: ellipsis; }\n\n.picker .picker-wheel:first-child li {\n  margin-right: 0; }\n\n.picker .picker-wheel:last-child li {\n  margin-left: 0; }\n", ""]);
-
-	// exports
-
-
-/***/ },
-/* 4 */
-/***/ function(module, exports) {
-
-	/*
-		MIT License http://www.opensource.org/licenses/mit-license.php
-		Author Tobias Koppers @sokra
-	*/
-	// css base code, injected by the css-loader
-	module.exports = function() {
-		var list = [];
-
-		// return the list of modules as css string
-		list.toString = function toString() {
-			var result = [];
-			for(var i = 0; i < this.length; i++) {
-				var item = this[i];
-				if(item[2]) {
-					result.push("@media " + item[2] + "{" + item[1] + "}");
-				} else {
-					result.push(item[1]);
-				}
-			}
-			return result.join("");
-		};
-
-		// import a list of modules into the list
-		list.i = function(modules, mediaQuery) {
-			if(typeof modules === "string")
-				modules = [[null, modules, ""]];
-			var alreadyImportedModules = {};
-			for(var i = 0; i < this.length; i++) {
-				var id = this[i][0];
-				if(typeof id === "number")
-					alreadyImportedModules[id] = true;
-			}
-			for(i = 0; i < modules.length; i++) {
-				var item = modules[i];
-				// skip already imported module
-				// this implementation is not 100% perfect for weird media query combinations
-				//  when a module is imported multiple times with different media queries.
-				//  I hope this will never occur (Hey this way we have smaller bundles)
-				if(typeof item[0] !== "number" || !alreadyImportedModules[item[0]]) {
-					if(mediaQuery && !item[2]) {
-						item[2] = mediaQuery;
-					} else if(mediaQuery) {
-						item[2] = "(" + item[2] + ") and (" + mediaQuery + ")";
-					}
-					list.push(item);
-				}
-			}
-		};
-		return list;
-	};
-
-
-/***/ },
-/* 5 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/*
-		MIT License http://www.opensource.org/licenses/mit-license.php
-		Author Tobias Koppers @sokra
-	*/
-	var stylesInDom = {},
-		memoize = function(fn) {
-			var memo;
-			return function () {
-				if (typeof memo === "undefined") memo = fn.apply(this, arguments);
-				return memo;
-			};
-		},
-		isOldIE = memoize(function() {
-			return /msie [6-9]\b/.test(window.navigator.userAgent.toLowerCase());
-		}),
-		getHeadElement = memoize(function () {
-			return document.head || document.getElementsByTagName("head")[0];
-		}),
-		singletonElement = null,
-		singletonCounter = 0,
-		styleElementsInsertedAtTop = [];
-
-	module.exports = function(list, options) {
-		if(false) {
-			if(typeof document !== "object") throw new Error("The style-loader cannot be used in a non-browser environment");
-		}
-
-		options = options || {};
-		// Force single-tag solution on IE6-9, which has a hard limit on the # of <style>
-		// tags it will allow on a page
-		if (typeof options.singleton === "undefined") options.singleton = isOldIE();
-
-		// By default, add <style> tags to the bottom of <head>.
-		if (typeof options.insertAt === "undefined") options.insertAt = "bottom";
-
-		var styles = listToStyles(list);
-		addStylesToDom(styles, options);
-
-		return function update(newList) {
-			var mayRemove = [];
-			for(var i = 0; i < styles.length; i++) {
-				var item = styles[i];
-				var domStyle = stylesInDom[item.id];
-				domStyle.refs--;
-				mayRemove.push(domStyle);
-			}
-			if(newList) {
-				var newStyles = listToStyles(newList);
-				addStylesToDom(newStyles, options);
-			}
-			for(var i = 0; i < mayRemove.length; i++) {
-				var domStyle = mayRemove[i];
-				if(domStyle.refs === 0) {
-					for(var j = 0; j < domStyle.parts.length; j++)
-						domStyle.parts[j]();
-					delete stylesInDom[domStyle.id];
-				}
-			}
-		};
-	}
-
-	function addStylesToDom(styles, options) {
-		for(var i = 0; i < styles.length; i++) {
-			var item = styles[i];
-			var domStyle = stylesInDom[item.id];
-			if(domStyle) {
-				domStyle.refs++;
-				for(var j = 0; j < domStyle.parts.length; j++) {
-					domStyle.parts[j](item.parts[j]);
-				}
-				for(; j < item.parts.length; j++) {
-					domStyle.parts.push(addStyle(item.parts[j], options));
-				}
-			} else {
-				var parts = [];
-				for(var j = 0; j < item.parts.length; j++) {
-					parts.push(addStyle(item.parts[j], options));
-				}
-				stylesInDom[item.id] = {id: item.id, refs: 1, parts: parts};
-			}
-		}
-	}
-
-	function listToStyles(list) {
-		var styles = [];
-		var newStyles = {};
-		for(var i = 0; i < list.length; i++) {
-			var item = list[i];
-			var id = item[0];
-			var css = item[1];
-			var media = item[2];
-			var sourceMap = item[3];
-			var part = {css: css, media: media, sourceMap: sourceMap};
-			if(!newStyles[id])
-				styles.push(newStyles[id] = {id: id, parts: [part]});
-			else
-				newStyles[id].parts.push(part);
-		}
-		return styles;
-	}
-
-	function insertStyleElement(options, styleElement) {
-		var head = getHeadElement();
-		var lastStyleElementInsertedAtTop = styleElementsInsertedAtTop[styleElementsInsertedAtTop.length - 1];
-		if (options.insertAt === "top") {
-			if(!lastStyleElementInsertedAtTop) {
-				head.insertBefore(styleElement, head.firstChild);
-			} else if(lastStyleElementInsertedAtTop.nextSibling) {
-				head.insertBefore(styleElement, lastStyleElementInsertedAtTop.nextSibling);
-			} else {
-				head.appendChild(styleElement);
-			}
-			styleElementsInsertedAtTop.push(styleElement);
-		} else if (options.insertAt === "bottom") {
-			head.appendChild(styleElement);
-		} else {
-			throw new Error("Invalid value for parameter 'insertAt'. Must be 'top' or 'bottom'.");
-		}
-	}
-
-	function removeStyleElement(styleElement) {
-		styleElement.parentNode.removeChild(styleElement);
-		var idx = styleElementsInsertedAtTop.indexOf(styleElement);
-		if(idx >= 0) {
-			styleElementsInsertedAtTop.splice(idx, 1);
-		}
-	}
-
-	function createStyleElement(options) {
-		var styleElement = document.createElement("style");
-		styleElement.type = "text/css";
-		insertStyleElement(options, styleElement);
-		return styleElement;
-	}
-
-	function createLinkElement(options) {
-		var linkElement = document.createElement("link");
-		linkElement.rel = "stylesheet";
-		insertStyleElement(options, linkElement);
-		return linkElement;
-	}
-
-	function addStyle(obj, options) {
-		var styleElement, update, remove;
-
-		if (options.singleton) {
-			var styleIndex = singletonCounter++;
-			styleElement = singletonElement || (singletonElement = createStyleElement(options));
-			update = applyToSingletonTag.bind(null, styleElement, styleIndex, false);
-			remove = applyToSingletonTag.bind(null, styleElement, styleIndex, true);
-		} else if(obj.sourceMap &&
-			typeof URL === "function" &&
-			typeof URL.createObjectURL === "function" &&
-			typeof URL.revokeObjectURL === "function" &&
-			typeof Blob === "function" &&
-			typeof btoa === "function") {
-			styleElement = createLinkElement(options);
-			update = updateLink.bind(null, styleElement);
-			remove = function() {
-				removeStyleElement(styleElement);
-				if(styleElement.href)
-					URL.revokeObjectURL(styleElement.href);
-			};
-		} else {
-			styleElement = createStyleElement(options);
-			update = applyToTag.bind(null, styleElement);
-			remove = function() {
-				removeStyleElement(styleElement);
-			};
-		}
-
-		update(obj);
-
-		return function updateStyle(newObj) {
-			if(newObj) {
-				if(newObj.css === obj.css && newObj.media === obj.media && newObj.sourceMap === obj.sourceMap)
-					return;
-				update(obj = newObj);
-			} else {
-				remove();
-			}
-		};
-	}
-
-	var replaceText = (function () {
-		var textStore = [];
-
-		return function (index, replacement) {
-			textStore[index] = replacement;
-			return textStore.filter(Boolean).join('\n');
-		};
-	})();
-
-	function applyToSingletonTag(styleElement, index, remove, obj) {
-		var css = remove ? "" : obj.css;
-
-		if (styleElement.styleSheet) {
-			styleElement.styleSheet.cssText = replaceText(index, css);
-		} else {
-			var cssNode = document.createTextNode(css);
-			var childNodes = styleElement.childNodes;
-			if (childNodes[index]) styleElement.removeChild(childNodes[index]);
-			if (childNodes.length) {
-				styleElement.insertBefore(cssNode, childNodes[index]);
-			} else {
-				styleElement.appendChild(cssNode);
-			}
-		}
-	}
-
-	function applyToTag(styleElement, obj) {
-		var css = obj.css;
-		var media = obj.media;
-
-		if(media) {
-			styleElement.setAttribute("media", media)
-		}
-
-		if(styleElement.styleSheet) {
-			styleElement.styleSheet.cssText = css;
-		} else {
-			while(styleElement.firstChild) {
-				styleElement.removeChild(styleElement.firstChild);
-			}
-			styleElement.appendChild(document.createTextNode(css));
-		}
-	}
-
-	function updateLink(linkElement, obj) {
-		var css = obj.css;
-		var sourceMap = obj.sourceMap;
-
-		if(sourceMap) {
-			// http://stackoverflow.com/a/26603875
-			css += "\n/*# sourceMappingURL=data:application/json;base64," + btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap)))) + " */";
-		}
-
-		var blob = new Blob([css], { type: "text/css" });
-
-		var oldSrc = linkElement.href;
-
-		linkElement.href = URL.createObjectURL(blob);
-
-		if(oldSrc)
-			URL.revokeObjectURL(oldSrc);
-	}
-
-
-/***/ },
-/* 6 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var Frame = __webpack_require__(7);
-	var Wheel = __webpack_require__(11);
-	var Col = __webpack_require__(14);
-	var util = __webpack_require__(15);
-	var defaultOption = __webpack_require__(16);
+	var Frame = __webpack_require__(2);
+	var Wheel = __webpack_require__(6);
+	var Col = __webpack_require__(10);
+	var util = __webpack_require__(11);
+	var defaultOption = __webpack_require__(12);
 
 
 
@@ -568,11 +209,11 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 7 */
+/* 2 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var $ = __webpack_require__(8);
-	var config = __webpack_require__(10);
+	var $ = __webpack_require__(3);
+	var config = __webpack_require__(5);
 
 
 	//构建主框架
@@ -660,7 +301,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 8 */
+/* 3 */
 /***/ function(module, exports, __webpack_require__) {
 
 	//var $ = function(selector){
@@ -775,12 +416,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	//
 	//
 	//$.fn.init.prototype = $.fn;
-	var $ = __webpack_require__(9);
+	var $ = __webpack_require__(4);
 	module.exports = $;
 
 
 /***/ },
-/* 9 */
+/* 4 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -11006,7 +10647,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 10 */
+/* 5 */
 /***/ function(module, exports) {
 
 	/**
@@ -11022,17 +10663,17 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ },
-/* 11 */
+/* 6 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
 	 * 滚轮类,是显示选择器可选项的滚轮体
 	 */
 
-	var $ = __webpack_require__(8);
-	var animationUtil = __webpack_require__(12);
-	var config = __webpack_require__(10);
-	var intersectionY = __webpack_require__(13)
+	var $ = __webpack_require__(3);
+	var animationUtil = __webpack_require__(7);
+	var config = __webpack_require__(5);
+	var intersectionY = __webpack_require__(8)
 
 	function Wheel(picker, col, option, index){
 
@@ -11488,7 +11129,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	module.exports = Wheel;
 
 /***/ },
-/* 12 */
+/* 7 */
 /***/ function(module, exports) {
 
 	/**
@@ -11564,33 +11205,33 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ },
-/* 13 */
-/***/ function(module, exports) {
+/* 8 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var cacheData = __webpack_require__(9);
 
 	/**
-	 * 根据坐标y、圆半径、总长度计算偏移角度
-	 * @param y
-	 * @param radius
-	 * @param wheelHeight
-	 * @returns {number}
+	 * 因为intersectionY是个纯函数,因此可以缓存,这样有利于减少计算,增加动画流畅度。尤其在移动端效果十分明显。
+	 * 计算工作有test/calcIntersectionCache,这里只是将其计算结果封装为一个函数
 	 */
 	module.exports = function (y, radius, wheelHeight) {
-	    if(Math.abs(y) >= wheelHeight / 2){
-	        return Math.sign(y) * Math.atan(2);
-	    }
 
-	    var a = (y * y + wheelHeight * wheelHeight)/ (wheelHeight * wheelHeight);
-	    var b = -2 * y * y / wheelHeight;
-	    var c = (y * y) - (radius * radius);
-
-	    var x = (-1 * b + Math.sqrt(b * b - 4 * a * c) ) / 2 / a;
-	    var y = -1 * y * x / wheelHeight + y;
-
-	    return Math.atan(y / x);
+	    //计算比例
+	    var ratio = Math.round(y * 200 / wheelHeight);
+	    ratio = Math.max(-100,ratio);
+	    ratio = Math.min(100,ratio)
+	    console.log(y,ratio, cacheData[Math.abs(ratio)])
+	    return y < 0 ? -1 * cacheData[Math.abs(ratio)] : cacheData[Math.abs(ratio)];
 	}
 
 /***/ },
-/* 14 */
+/* 9 */
+/***/ function(module, exports) {
+
+	module.exports = {"0":0,"1":0.006180474730027776,"2":0.012361758667979887,"3":0.01854466178595427,"4":0.024729995586343003,"5":0.030918573871856408,"6":0.03711121352142655,"7":0.043308735273995536,"8":0.04951196452223301,"9":0.05572173211827738,"10":0.06193887519365582,"11":0.06816423799561012,"12":0.07439867274213974,"13":0.08064304049816978,"14":0.08689821207536214,"15":0.0931650689582126,"16":0.09944450425921704,"17":0.1057374237060475,"18":0.11204474666385271,"19":0.11836740719599605,"20":0.12470635516675682,"21":0.13106255738976524,"22":0.13743699882620672,"23":0.1438306838371266,"24":0.1502446374944947,"25":0.15667990695605222,"26":0.163137562909363,"27":0.16961870109094018,"28":0.1761244438868085,"29":0.18265594202141244,"30":0.189214376342388,"31":0.1958009597093892,"32":0.20241693899591295,"33":0.20906359721390222,"34":0.21574225577183714,"35":0.2224542768780669,"36":0.22920106610229693,"37":0.23598407510944647,"38":0.24280480458155373,"39":0.24966480734504126,"40":0.2565656917224997,"41":0.26350912513022323,"42":0.2704968379450743,"43":0.27753062766690556,"44":0.28461236340577195,"45":0.2917439907265723,"46":0.298927536887646,"47":0.30616511651426775,"48":0.3134589377530486,"49":0.3208113089590395,"50":0.32822464597399087,"51":0.3357014800618854,"52":0.3432444665767064,"53":0.3508563944476478,"54":0.35854019657886727,"55":0.3662989612747276,"56":0.37413594481766604,"57":0.38205458534478537,"58":0.39005851819157766,"59":0.3981515928975172,"60":0.4063378920994586,"61":0.41462175257587425,"62":0.42300778874928274,"63":0.4315009190073606,"64":0.4401063952672662,"65":0.4488298362852176,"66":0.45767726530766856,"67":0.4666551527757603,"68":0.47577046493656705,"69":0.4850307193901132,"70":0.4944440488195467,"71":0.5040192744255141,"72":0.5137659909310855,"73":0.523694665462527,"74":0.5338167531736872,"75":0.5441448332086339,"76":0.5546927695451231,"77":0.5654759025098686,"78":0.5765112784180985,"79":0.5878179270265199,"80":0.5994171995371129,"81":0.6113331840998124,"82":0.6235932216642447,"83":0.6362285534378791,"84":0.6492751433974548,"85":0.6627747373240171,"86":0.6767762470698537,"87":0.6913375909489355,"88":0.7065281883018284,"89":0.7224324166263504,"90":0.7391545276252866,"91":0.7568258524516188,"92":0.7756157498195769,"93":0.7957489855645078,"94":0.8175348626997212,"95":0.8414195586288256,"96":0.8680892494981647,"97":0.8987014263951989,"98":0.935517870959519,"99":0.9843911534692572,"100":1.1071487177940906}
+
+/***/ },
+/* 10 */
 /***/ function(module, exports) {
 
 	/**
@@ -11625,7 +11266,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	module.exports = Cal;
 
 /***/ },
-/* 15 */
+/* 11 */
 /***/ function(module, exports) {
 
 	var _ = {
@@ -11647,7 +11288,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 16 */
+/* 12 */
 /***/ function(module, exports) {
 
 	/**
