@@ -131,7 +131,7 @@ document.querySelector('#example1').addEventListener('click', function () {
 var picker2 = new picker({
   cols: [{
     prefix: '   第',
-    values: ['一', '二', '三', '四', '五'],
+    options: ['一', '二', '三', '四', '五'],
     suffix: '章  ',
   }],
   title:"选择要阅读的章节",
@@ -146,10 +146,10 @@ document.querySelector('#example2').addEventListener('click', function () {
 // 实例三
 var picker3 = new picker({
   cols: [{
-   	values:["一","二","三","四","五","六"],
+    options:["一","二","三","四","五","六"],
     suffix: '年',
   },{
- 	values:['1','2','3','4','5'],
+    options:['1','2','3','4','5'],
     suffix: '班  ',
   }],
   title:"请选择年级和班级",
