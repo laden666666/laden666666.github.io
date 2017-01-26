@@ -10715,6 +10715,10 @@ return /******/ (function(modules) { // webpackBootstrap
 		this.offsetTop = 0;
 
 		////////////////////滚动属性
+		//滚轮转动前初始的转角,用于计算滚轮是否转动过
+		this.originalAngle = 0;
+		//一次拖动过程中滚轮被转动的最大角度
+		this.changeMaxAngle = 0;
 		//当前滚轮转角
 		this.angle = 0;
 		//当前被选值的index
@@ -10775,7 +10779,6 @@ return /******/ (function(modules) { // webpackBootstrap
 		this.dom[0].addEventListener("touchend", endDrag);
 		this.dom[0].addEventListener("mouseup", endDrag);
 
-
 		//初始化标签
 		this.dom.find(".picker-label").css("transform","translateZ(" + this.radius + "vmin)");
 
@@ -10797,6 +10800,8 @@ return /******/ (function(modules) { // webpackBootstrap
 		this.timeStamp = Date.now();
 		this.isDraging = true;
 		this.offsetTop = this.dom[0].offsetTop;
+		this.originalAngle = this.angle;
+		this.changeMaxAngle = 0;
 		for(var parent = this.dom[0].parentElement;parent; parent = parent.parentElement){
 			this.offsetTop += parent.offsetTop;
 		}
@@ -10823,6 +10828,9 @@ return /******/ (function(modules) { // webpackBootstrap
 		var changeAngle = (intersectionY(this.lastY, this.radius, config.wheelHeight) - intersectionY(y, this.radius, config.wheelHeight))
 			/ Math.PI * 180;
 		var angle = changeAngle + this.angle;
+
+		//记录滚轮滚动的最大转角
+		this.changeMaxAngle = Math.max( Math.abs( this.originalAngle - angle ), this.changeMaxAngle);
 
 		//记录当前角度
 		this.setAngle(angle);
@@ -10919,6 +10927,13 @@ return /******/ (function(modules) { // webpackBootstrap
 
 			//将标签的dom放到contains上,contains的事件全部委托于容器,即标签不监听事件
 			that.contains.append(li);
+
+			//增加点击选择功能
+			li[0].addEventListener('click',function () {
+				if(that.changeMaxAngle < 10)
+					that.selectIndex(index, true);
+			});
+
 			i++;
 		});
 
@@ -10996,19 +11011,25 @@ return /******/ (function(modules) { // webpackBootstrap
 				if (_angle != angle) {
 					that.animationId = animationUtil.startAnimation(_run);
 				} else {
+					//记录下原有的index,确定选择是否发生了改变
+					var oldSelectedIndex = that.selectedIndex;
 
 					that.selectedIndex = index;
 					that.selectedValue = that.list[index];
 					if(typeof that.selectedValue == 'object'){
 						that.selectedValue = that.selectedValue[that.valueKey];
 					}
-					that.toggleSelected(that.selectedIndex, that.selectedValue);
+					if(oldSelectedIndex != that.selectedIndex)
+						that.toggleSelected(that.selectedIndex, that.selectedValue);
 				}
 			};
 
 			//启动动画
 			that.animationId = animationUtil.startAnimation(_run);
 		} else {
+			//记录下原有的index,确定选择是否发生了改变
+			var oldSelectedIndex = this.selectedIndex;
+
 			//如果不显示动画,直接赋值
 			this.setAngle(angle);
 			this.selectedIndex = index;
@@ -11016,7 +11037,8 @@ return /******/ (function(modules) { // webpackBootstrap
 			if(typeof this.selectedValue == 'object'){
 				this.selectedValue = this.selectedValue[this.valueKey];
 			}
-			this.toggleSelected(this.selectedIndex, this.selectedValue);
+			if(oldSelectedIndex != this.selectedIndex)
+				this.toggleSelected(this.selectedIndex, this.selectedValue);
 		}
 	}
 

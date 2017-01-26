@@ -135,6 +135,7 @@
   transform-style: preserve-3d; }
 
 .picker .picker-wheel li {
+  cursor: pointer;
   display: block;
   width: 100%;
   text-align: center;
