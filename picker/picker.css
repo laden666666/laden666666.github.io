@@ -6,7 +6,7 @@
   width: 100vw;
   user-select: none;
   background: transparent;
-  transition: 0.5s background; }
+  transition: 0.3s ease-out background; }
   .picker-cover.s-open {
     background: rgba(0, 0, 0, 0.6); }
 
@@ -23,7 +23,7 @@
   user-select: none;
   -webkit-transform: translate3d(0, 100vmin, 0);
   transform: translate3d(0, 100vmin, 0);
-  transition: 0.5s transform; }
+  transition: 0.3s ease-out transform; }
   .picker.picker-frame.s-open {
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0); }
