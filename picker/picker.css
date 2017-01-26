@@ -24,7 +24,7 @@
   height: 15vmin;
   padding: 3vmin 5vmin;
   box-sizing: border-box;
-  background-color: #f7f7f8;
+  background: linear-gradient(to top, #fff 0%, #f7f7f8 100%);
   display: flex;
   font-size: 5vmin;
   line-height: 9vmin; }
