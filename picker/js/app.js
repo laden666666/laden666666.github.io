@@ -130,13 +130,13 @@ document.querySelector('#example1').addEventListener('click', function () {
 // 实例2
 var picker2 = new picker({
   cols: [{
-    prefix: '   第',
+    prefix: '  第',
     options: ['一', '二', '三', '四', '五'],
     suffix: '章  ',
   }],
   title:"选择要阅读的章节",
   onOkClick: function (values) {
-    document.querySelector('#example2').textContent = (values[0]);
+    document.querySelector('#example2').textContent = '第' + (values[0]) + '章';
   },
 })
 document.querySelector('#example2').addEventListener('click', function () {
@@ -251,9 +251,11 @@ var picker7 = new picker({
     options: athlete,
     labelKey: 'name',
     valueKey: 'name',
-  },[
-      //默认是空的
-  ]],
+  },
+    //因为运动项的默认值是足球,所以运动员列表使用足球的列表
+    athlete[0].athlete
+  ],
+  setValues: ['足球','小贝'],
   onSelectItem: function (level, selectedIndex, selectedValue) {
     if(level == 0){
       this.setOptions(1, athlete[selectedIndex].athlete);

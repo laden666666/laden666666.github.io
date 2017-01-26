@@ -46,7 +46,9 @@
   color: #3d4145;
   overflow: hidden;
   white-space: nowrap;
-  text-overflow: ellipsis; }
+  text-overflow: ellipsis;
+  padding: 0 5px;
+  font-weight: normal; }
 
 .picker .picker-btn-cancel, .picker .picker-btn-ok {
   color: #0894ec;
