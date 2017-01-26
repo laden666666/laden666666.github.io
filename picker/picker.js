@@ -244,6 +244,11 @@ return /******/ (function(modules) { // webpackBootstrap
 		this.frame.find(".picker-btn-cancel").text( option.buttons[1] || '取消');
 		this.frame.find(".picker-btn-ok").text( option.buttons[0] || '确定');
 
+		this.frame[0].addEventListener('touchstart', function (event) {
+			event.preventDefault();
+			event.stopPropagation();
+		})
+
 		$("body").append(this.frame).append(this.cover);
 
 		//绑定主架的事件
@@ -10707,7 +10712,7 @@ return /******/ (function(modules) { // webpackBootstrap
 		//是否使用水平透视,使用水平透视后,显示时滚轮水平方向有透视效果
 		this.isPerspective = this.option.isPerspective;
 		//获取1vmin的实际像素值
-		this.vmin = Math.min(document.body.scrollWidth, document.body.scrollHeight) / 100;
+		this.vmin = Math.min(window.innerWidth, window.innerHeight) / 100;
 		//获得控件到body最顶端的距离,计算触摸事件的offsetY时候使用
 		this.offsetTop = 0;
 
@@ -10751,20 +10756,16 @@ return /******/ (function(modules) { // webpackBootstrap
 				var target = target.parentElement;
 			}
 
-			var offsetY = event.touches ?  event.touches[0].pageY - that.offsetTop : event.pageY - that.offsetTop;
+			var offsetY = event.touches ?  event.touches[0].clientY - that.offsetTop : event.clientY - that.offsetTop;
 			that.startDrag(offsetY);
-			event.preventDefault();
-			event.stopPropagation();
 		}
 		this.dom[0].addEventListener("touchstart", startDrag);
 		this.dom[0].addEventListener("mousedown", startDrag);
 
 		//注册拖拽事件
 		function drag(event){
-			var offsetY = event.touches ?  event.touches[0].pageY - that.offsetTop : event.pageY - that.offsetTop;
+			var offsetY = event.touches ?  event.touches[0].clientY - that.offsetTop : event.clientY - that.offsetTop;
 			that.drag(offsetY);
-			event.preventDefault();
-			event.stopPropagation();
 		}
 		this.dom[0].addEventListener("touchmove", drag);
 		this.dom[0].addEventListener("mousemove", drag);
@@ -11224,7 +11225,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	    var ratio = Math.round(y * 200 / wheelHeight);
 	    ratio = Math.max(-100,ratio);
 	    ratio = Math.min(100,ratio)
-	    console.log(y,ratio, cacheData[Math.abs(ratio)])
 	    return y < 0 ? -1 * cacheData[Math.abs(ratio)] : cacheData[Math.abs(ratio)];
 	}
 
