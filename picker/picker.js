@@ -237,17 +237,15 @@ return /******/ (function(modules) { // webpackBootstrap
 				+ '</div>'
 				+ '<div class="picker-body"></div>'
 			+ '</header>').height((config.wheelHeight + 15) + "vmin").hide();
-		this.frame.find(".picker-body").css("perspective",(config.wheelHeight) + "vmin");
+		this.frame.find(".picker-body").css("perspective",(config.wheelHeight) + "vmin")[0].addEventListener('touchstart', function (event) {
+			event.preventDefault();
+			event.stopPropagation();
+		});
 
 		//设置标题按钮名
 		this.frame.find(".picker-title").text(option.title);
 		this.frame.find(".picker-btn-cancel").text( option.buttons[1] || '取消');
 		this.frame.find(".picker-btn-ok").text( option.buttons[0] || '确定');
-
-		this.frame[0].addEventListener('touchstart', function (event) {
-			event.preventDefault();
-			event.stopPropagation();
-		})
 
 		$("body").append(this.frame).append(this.cover);
 
@@ -11217,7 +11215,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	/**
 	 * 因为intersectionY是个纯函数,因此可以缓存,这样有利于减少计算,增加动画流畅度。尤其在移动端效果十分明显。
-	 * 计算工作有test/calcIntersectionCache,这里只是将其计算结果封装为一个函数
+	 * 计算工作由test/calcIntersectionCache完成,这里只是将其计算结果封装为一个函数
 	 */
 	module.exports = function (y, radius, wheelHeight) {
 
