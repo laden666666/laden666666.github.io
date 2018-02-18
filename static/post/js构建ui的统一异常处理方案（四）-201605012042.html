@@ -1,0 +1,490 @@
+<!doctype html><head><meta charset="utf-8"><style>.mydoc{font-size:14px;overflow:hidden}.mydoc_blockquote{padding:12px 5px 12px 30px;margin:2em 0 0 8px;border-width:0;border-left:4px solid #f66;background-color:#f8f8f8;position:relative;border-bottom-right-radius:2px;border-top-right-radius:2px;line-height:1.6em}.mydoc_blockquote:before{position:absolute;top:14px;left:-12px;background-color:#f66;color:#fff;content:"!";width:20px;height:20px;text-align:center;line-height:20px;font-weight:700;font-family:Source Sans Pro,Helvetica Neue,Arial,sans-serif;font-size:14px;border-radius:10px}code[class*=language-],pre[class*=language-]{color:#000;background:none;text-shadow:0 1px #fff;font-family:Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.5;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}code[class*=language-]::-moz-selection,code[class*=language-] ::-moz-selection,pre[class*=language-]::-moz-selection,pre[class*=language-] ::-moz-selection{text-shadow:none;background:#b3d4fc}code[class*=language-]::selection,code[class*=language-] ::selection,pre[class*=language-]::selection,pre[class*=language-] ::selection{text-shadow:none;background:#b3d4fc}@media print{code[class*=language-],pre[class*=language-]{text-shadow:none}}pre[class*=language-]{padding:1em;margin:.5em 0;overflow:auto}:not(pre)>code[class*=language-],pre[class*=language-]{background:#f5f2f0}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal}.token.cdata,.token.comment,.token.doctype,.token.prolog{color:#708090}.token.punctuation{color:#999}.namespace{opacity:.7}.token.boolean,.token.constant,.token.deleted,.token.number,.token.property,.token.symbol,.token.tag{color:#905}.token.attr-name,.token.builtin,.token.char,.token.inserted,.token.selector,.token.string{color:#690}.language-css .token.string,.style .token.string,.token.entity,.token.operator,.token.url{color:#a67f59;background:hsla(0,0%,100%,.5)}.token.atrule,.token.attr-value,.token.keyword{color:#07a}.token.function{color:#dd4a68}.token.important,.token.regex,.token.variable{color:#e90}.token.bold,.token.important{font-weight:700}.token.italic{font-style:italic}.token.entity{cursor:help}.mydoc_code{overflow-x:auto;position:relative;background-color:#f8f8f8;padding:0;line-height:1.1em;border-radius:2px;margin:1.2em 0;background-image:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8AgMAAABHkjHhAAAACVBMVEWAgIBaWlo+Pj7rTFvWAAAAA3RSTlMHCAw+VhR4AAAA+klEQVQoz4WSMW7EQAhFPxKWNh2FCx+HkaZI6RRb5DYbyVfIJXLKDCFoMbaTKSw/8ZnPAPjaH2xgZcUNUDADD7D9LtDBCLZ45fbkvo/30K8yeI64pPwl6znd/3n/Oe93P3ho9qeh72btTFzqkz0rsJle8Zr81OLEwZ1dv/713uWqvu2pl+k0fy7MWtj9r/tN5q/02z89qa/L4Dc2LvM93kezPfXlME/O86EbY/V9GB9ePX8G1/6W+/9h1dq/HGfTfzT3j/xNo7522Bfnqe5jO/fvhVthlfk434v3iO9zG/UOphyPeinPl1J8Gtaa7xPTa/Dk+RIs4deMvwGvcGsmsCvJ0AAAAABJRU5ErkJggg==")}.mydoc_code_pre{padding:1.2em 1.4em;line-height:1.5em;margin:0}.mydoc_h1{margin:0 0 1em}.mydoc_h1_a{color:#2c3e50;text-decoration:none;font-size:2em}.mydoc_h1_h1{margin:45px 0 8px;padding-bottom:7px;font-size:28px}.mydoc_h2{margin:35px 0 .8em}.mydoc_h2_a{font-size:1.5em;text-decoration:none;color:#2c3e50}.mydoc_h2_a:before{content:"";display:block;margin-top:-40px;height:40px;visibility:hidden}.mydoc_h2_h2{margin:5px 0 8px;border-bottom:1px solid #ddd;font-size:22px;padding-bottom:1em}.mydoc_h3{margin:35px 0 .8em}.mydoc_h3_a{font-size:1.3em;text-decoration:none;color:#2c3e50}.mydoc_h3_a:before{content:"";display:block;margin-top:-30px;height:30px;visibility:hidden}.mydoc_h3_h3{margin:5px 0 8px;border-bottom:1px solid #ddd;font-size:18px;padding-bottom:.6em}.mydoc_h4{margin:35px 0 .8em}.mydoc_h4_a{font-size:1.2em;text-decoration:none;color:#2c3e50}.mydoc_h4_a:before{content:"";display:block;margin-top:-20px;height:20px;visibility:hidden}.mydoc_h4_h4{margin:5px 0 8px;border-bottom:1px solid #ddd;font-size:16px;padding-bottom:.3em}.mydoc_table{margin:15px 0 0;padding:0;border:1px solid #aaa;border-collapse:collapse;width:100%;color:#000;font-size:14px;background-color:#fdfcf8}.mydoc_table .mydoc_tr{margin:0;padding:0;border:0;background-color:#fff}.mydoc_table .mydoc_tr:nth-child(odd){background-color:#f5f5f5}.mydoc_table .mydoc_th,.mydoc_table .mydoc_tr:first-child{background-color:#3f3f3f}.mydoc_table .mydoc_th{margin:0;padding:5px 15px 5px 6px;border:1px solid #3f3f3f;vertical-align:baseline;text-align:left;color:#fff;width:123px;word-break:break-all;font-weight:400}.mydoc_table .mydoc_td{word-break:break-all;margin:0;padding:6px 15px 6px 6px;border:1px solid #aaa;vertical-align:text-top}.mydoc_img{display:block;max-width:100%}.mydoc_li:first-child,:not(.mydoc_li)+.mydoc_li{margin-top:10px}.mydoc_li+.mydoc_li{margin-top:-10px}.mydoc_li{margin:0;color:#34495e;margin-bottom:10px;position:relative}.mydoc_p{line-height:1.6em;margin:1.2em 0 -1.2em;padding-bottom:1.2em;position:relative;z-index:1;color:#333}.mydoc_a{color:#42b983;font-weight:400;text-decoration:none;cursor:pointer}.mydoc_strong{font-weight:600;color:#2c3e50}</style></head><article class='mydoc'>
+                    <div class="mydoc_h1">
+                <a class="mydoc_h1_a">
+                    <h1 class="mydoc_h1_h1">js构建ui的统一异常处理方案（四）</h1>
+                </a>
+                <div class="mydoc_h1_content">
+                    <p class="mydoc_p"> 上一篇我们介绍了统一异常处理方案的设计方案，这一篇我们将直接做一个小例子，验证我们的设计方案。</p><p class="mydoc_p"> 例子是一个todo的列表界面(页面代码参考于<a class="mydoc_a" href="https://github.com/zongxiao/Django-Simple-Todo">https://github.com/zongxiao/Django-Simple-Todo</a>)，里面的各个按钮都会抛出不同的系统异常，从中我们可以测试各个系统异常的处理策略。例子中我们为了使其尽量能够兼容更多的浏览器（主要是ie8），同时保留mvvm、模块化等如今前端开发的精华，所以采用avalon做view层和controller层，requirejs做模块化工具实现自动加载资源和service的享元模式，样式库采用兼容ie8的bootstarp2。由于jquery1.x和jquery2.x对于promise/A+的规范实现的并不完整，故采用刚刚出炉的jquery-compat-3.0.0-alpha1版，不过要注意的是这是一个内部测试版。</p><p class="mydoc_p"> demo的地址是： <a class="mydoc_a" href="https://github.com/laden666666/UnifiedExceptionHandlingDome">https://github.com/laden666666/UnifiedExceptionHandlingDome</a></p><div class="mydoc_h2">
+                    <a class="mydoc_h2_a">
+                        <h2 class="mydoc_h2_h2">一、对promise的封装</h2>
+                    </a>
+                    <div class="mydoc_h1_content">
+                        <p class="mydoc_p"> 从第二篇和第三篇可以看出，promise是统一异常处理的核心之一，因此需要对promise做出必要的封装。</p><figure class='mydoc_code'>
+                    <pre class="mydoc_code_pre cm-s-eclipse"><span class="token comment">/**
+ * $def是对$.Deferred的一些封装，用于简化我的的异步调用过程。同时promise的具体实现往往是参考promise/A+规范的，所以可以把此规范看做是一个门面模式
+ * 而$def可以看成是一个将具体实现封装起来的适配器接口，可以让不同对promise/A+规范实现的类库都能被使用。因此用$def开发的的代码将来即使使用其他类库的
+ * promise实现代替$.Deferred的实现，这些代码也可以很好的移植。所以$def产生的promise对象，建议仅使用resolve、reject和notify这几个方法，因为
+ * 这些方法是标准promise提供的，更加利于代码移植。
+ */</span>
+<span class="token function">define</span><span class="token punctuation">(</span><span class="token string">"$def"</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token string">'$'</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token keyword">function</span><span class="token punctuation">(</span>$<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    window<span class="token punctuation">.</span>$def <span class="token operator">=</span> <span class="token punctuation">{</span>
+        <span class="token comment">/**
+         * 快速resolve
+         * @param {Object} o        返回的参数
+         */</span>
+        resolve<span class="token punctuation">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span>o<span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">var</span> d <span class="token operator">=</span> $<span class="token punctuation">.</span><span class="token function">Deferred</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            d<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>o<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">return</span> d<span class="token punctuation">.</span><span class="token function">promise</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token comment">/**
+         * 快速reject
+         * @param {Object} o        抛出的异常
+         */</span>
+        reject<span class="token punctuation">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span>o<span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">var</span> d <span class="token operator">=</span> $<span class="token punctuation">.</span><span class="token function">Deferred</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            d<span class="token punctuation">.</span><span class="token function">reject</span><span class="token punctuation">(</span>o<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">return</span> d<span class="token punctuation">.</span><span class="token function">promise</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token comment">/**
+         * 对Promise/A+中的racte的实现
+         * @param {arguments}        一个Promise的数组
+         */</span>
+        racte <span class="token punctuation">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">var</span> self <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">;</span>
+            <span class="token keyword">var</span> d <span class="token operator">=</span> $<span class="token punctuation">.</span><span class="token function">Deferred</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            
+            $<span class="token punctuation">.</span><span class="token function">each</span><span class="token punctuation">(</span>arguments<span class="token punctuation">,</span><span class="token keyword">function</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span>e<span class="token punctuation">)</span><span class="token punctuation">{</span>
+                self<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+                <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                    <span class="token keyword">return</span> e<span class="token punctuation">;</span>
+                <span class="token punctuation">}</span><span class="token punctuation">)</span>
+                <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                    d<span class="token punctuation">.</span>resolve<span class="token punctuation">.</span><span class="token function">apply</span><span class="token punctuation">(</span>d<span class="token punctuation">,</span>arguments<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span><span class="token punctuation">,</span><span class="token keyword">function</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span><span class="token punctuation">{</span>
+                    d<span class="token punctuation">.</span><span class="token function">reject</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span><span class="token punctuation">)</span>
+            <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">return</span> d<span class="token punctuation">.</span><span class="token function">promise</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token comment">/**
+         * 对Promise/A+中的all的实现
+         * @param {arguments}        一个Promise的数组
+         */</span>
+        all <span class="token punctuation">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">var</span> list <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+            <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">var</span> index <span class="token keyword">in</span> arguments<span class="token punctuation">)</span><span class="token punctuation">{</span>
+                list<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>arguments<span class="token punctuation">[</span>index<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            <span class="token keyword">return</span> $<span class="token punctuation">.</span>when<span class="token punctuation">.</span><span class="token function">apply</span><span class="token punctuation">(</span>$<span class="token punctuation">,</span>list<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token comment">/**
+         * 对ES6的Promise的实现
+         * @param {Function} fn        和标准的Promise的回调入参一样，是两个函数，分别是resolve和reject
+         */</span>
+        Promise <span class="token punctuation">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span>fn<span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">var</span> d <span class="token operator">=</span> $<span class="token punctuation">.</span><span class="token function">Deferred</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            
+            <span class="token keyword">function</span> <span class="token function">resolve</span><span class="token punctuation">(</span>v<span class="token punctuation">)</span><span class="token punctuation">{</span>
+                d<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>v<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            
+            <span class="token keyword">function</span> <span class="token function">reject</span><span class="token punctuation">(</span>v<span class="token punctuation">)</span><span class="token punctuation">{</span>
+                d<span class="token punctuation">.</span><span class="token function">reject</span><span class="token punctuation">(</span>v<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            
+            <span class="token keyword">if</span><span class="token punctuation">(</span>$<span class="token punctuation">.</span><span class="token function">isFunction</span><span class="token punctuation">(</span>fn<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                <span class="token function">fn</span><span class="token punctuation">(</span>resolve<span class="token punctuation">,</span>reject<span class="token punctuation">)</span>
+            <span class="token punctuation">}</span>
+            <span class="token keyword">return</span> d<span class="token punctuation">.</span><span class="token function">promise</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> window<span class="token punctuation">.</span>$def<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre>
+                </figure><p class="mydoc_p"> 这样，就简化了promise的创建过程。为了将来能够使用其他的promise类库能够代替 $.Deferred，更加利于代码移植，我们的promise需要全部使用$def来创建，并且统一使用then，而不能使用fail这种不符合promise/A+的语法。</p>
+                    </div>
+                </div><div class="mydoc_h2">
+                    <a class="mydoc_h2_a">
+                        <h2 class="mydoc_h2_h2">二、统一异常处理模块</h2>
+                    </a>
+                    <div class="mydoc_h1_content">
+                        <p class="mydoc_p"> 这个模块共分为两个部分，一个是创建系统异常的工厂模块；另一个是实现异常处理策略注册和处理的管理模块。 </p><figure class='mydoc_code'>
+                    <pre class="mydoc_code_pre cm-s-eclipse"><span class="token function">define</span><span class="token punctuation">(</span><span class="token string">"errorManager"</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token string">'$'</span><span class="token punctuation">,</span><span class="token string">'$def'</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token keyword">function</span><span class="token punctuation">(</span>$<span class="token punctuation">,</span>$def<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">//errorFactory注册的异常</span>
+    <span class="token keyword">var</span> errorList <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+    
+    <span class="token comment">//对外暴漏的对象，负责注册异常的处理策略，调用已经注册的系统异常处理</span>
+    <span class="token keyword">var</span> errorManager <span class="token operator">=</span> <span class="token punctuation">{</span>
+        <span class="token comment">/**
+         * 注册异常，将类放入error列表中，并让注册异常的处理函数
+         * @param {Object} name            异常的名字
+         * @param {Object} handle        异常的处理函数
+         */</span>
+        registerError<span class="token punctuation">:</span><span class="token keyword">function</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span>handle<span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>$<span class="token punctuation">.</span><span class="token function">isFunction</span><span class="token punctuation">(</span>handle<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span><span class="token string">"handle is not function"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            
+            <span class="token comment">//注册</span>
+            errorList<span class="token punctuation">[</span>name<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span>
+                handle <span class="token punctuation">:</span> handle
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        
+        <span class="token comment">/**
+         * 判断异常是否是指定异常类
+         * @param {Object} error            需要判断的异常对象
+         * @param {Object} errorName        异常的名字
+         */</span>
+        isError<span class="token punctuation">:</span><span class="token keyword">function</span><span class="token punctuation">(</span>error<span class="token punctuation">,</span>errorName<span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">return</span> error <span class="token operator">&amp;&amp;</span> error<span class="token punctuation">.</span>_errorName <span class="token operator">==</span> errorName<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        
+        <span class="token comment">/**
+         * 判断异常是否是指定异常类
+         * @param {Object} errorName        异常的名字
+         */</span>
+        findError<span class="token punctuation">:</span><span class="token keyword">function</span><span class="token punctuation">(</span>errorName<span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">return</span> errorList<span class="token punctuation">[</span>errorName<span class="token punctuation">]</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        
+        <span class="token comment">/**
+         * 处理错误，根据不同的异常类型，使用注册的异常方法处理去处理异常。这个就是在边界类上进行统一异常处理的方法
+         * @param {Object} error            需要处理的异常
+         * @param {Object} defaultHandle    当异常和所有注册的异常都不匹配的时候，做出的默认处理。这个参数可以是一个字符串，也可以是函数。如果是字符串就alert这个字符串，函数就执行这个函数
+         */</span>
+        handleErr <span class="token punctuation">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span>otherHandle<span class="token punctuation">,</span>error<span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>error <span class="token operator">||</span> <span class="token operator">!</span>error<span class="token punctuation">.</span>_errorName <span class="token operator">||</span> <span class="token operator">!</span><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">findError</span><span class="token punctuation">(</span>error<span class="token punctuation">.</span>_errorName<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                <span class="token comment">//发现error是未注册异常时候调用的方法</span>
+                <span class="token keyword">if</span><span class="token punctuation">(</span>$<span class="token punctuation">.</span><span class="token function">isFunction</span><span class="token punctuation">(</span>otherHandle<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                    <span class="token function">otherHandle</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+                    console<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    <span class="token function">alert</span><span class="token punctuation">(</span>otherHandle<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+                error<span class="token punctuation">.</span><span class="token function">printStack</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token comment">//将错误源和系统默认的错误处理方法，都传递给注册的异常处理方法</span>
+                <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">findError</span><span class="token punctuation">(</span>error<span class="token punctuation">.</span>_errorName<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">handle</span><span class="token punctuation">(</span>error<span class="token punctuation">,</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                    <span class="token keyword">if</span><span class="token punctuation">(</span>$<span class="token punctuation">.</span><span class="token function">isFunction</span><span class="token punctuation">(</span>otherHandle<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                        <span class="token function">otherHandle</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+                        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>otherHandle<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                        <span class="token function">alert</span><span class="token punctuation">(</span>otherHandle<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    <span class="token punctuation">}</span>
+                <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        
+        <span class="token comment">/**
+         * 访问所有已注册的异常的迭代器
+         */</span>
+        iterator<span class="token punctuation">:</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">var</span> list <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+            <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">var</span> k <span class="token keyword">in</span> errorList<span class="token punctuation">)</span><span class="token punctuation">{</span>
+                list<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>errorList<span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            <span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+            <span class="token keyword">return</span> <span class="token punctuation">{</span>
+                hasNext <span class="token punctuation">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                    <span class="token keyword">return</span> i <span class="token operator">&lt;</span> list<span class="token punctuation">.</span>length<span class="token punctuation">;</span>
+                <span class="token punctuation">}</span><span class="token punctuation">,</span>
+                next<span class="token punctuation">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                    <span class="token keyword">var</span> nextItem <span class="token operator">=</span> list<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+                    i<span class="token operator">++</span><span class="token punctuation">;</span>
+                    <span class="token keyword">return</span> nextItem<span class="token punctuation">;</span>
+                <span class="token punctuation">}</span><span class="token punctuation">,</span>
+                reset <span class="token punctuation">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                    i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">return</span> errorManager<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">/**
+ * 异常的创建工厂，同时提供注册新的异常类方法
+ */</span>
+<span class="token function">define</span><span class="token punctuation">(</span><span class="token string">"errorFactory"</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token string">'errorManager'</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token keyword">function</span><span class="token punctuation">(</span>errorManager<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    
+    <span class="token keyword">var</span> errorFactory <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+    <span class="token comment">//系统异常超类</span>
+    errorFactory<span class="token punctuation">.</span><span class="token function-variable function">BaseException</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span>name<span class="token punctuation">,</span>err<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">//error是真正的错误，记录着调用的堆栈信息</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>error <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Error</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">//异常的名字</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>_errorName <span class="token operator">=</span> name<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    errorFactory<span class="token punctuation">.</span>BaseException<span class="token punctuation">.</span>prototype <span class="token operator">=</span> <span class="token punctuation">{</span>
+        printStack <span class="token punctuation">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token comment">//对于ie8这种不支持console的浏览器兼容</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>window<span class="token punctuation">.</span>console<span class="token punctuation">)</span><span class="token punctuation">{</span>
+                window<span class="token punctuation">.</span>console <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>  
+                    <span class="token keyword">var</span> c <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span> c<span class="token punctuation">.</span>log <span class="token operator">=</span> c<span class="token punctuation">.</span>warn <span class="token operator">=</span> c<span class="token punctuation">.</span>debug <span class="token operator">=</span> c<span class="token punctuation">.</span>info <span class="token operator">=</span> c<span class="token punctuation">.</span>error <span class="token operator">=</span> c<span class="token punctuation">.</span>time <span class="token operator">=</span> c<span class="token punctuation">.</span>dir <span class="token operator">=</span> c<span class="token punctuation">.</span>profile  
+                    <span class="token operator">=</span> c<span class="token punctuation">.</span>clear <span class="token operator">=</span> c<span class="token punctuation">.</span>exception <span class="token operator">=</span> c<span class="token punctuation">.</span>trace <span class="token operator">=</span> c<span class="token punctuation">.</span><span class="token function-variable function">assert</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>  
+                    <span class="token keyword">return</span> c<span class="token punctuation">;</span>  
+                <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+            <span class="token punctuation">}</span>
+            console<span class="token punctuation">.</span><span class="token function">error</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>error<span class="token punctuation">.</span>stack<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>
+    
+    <span class="token comment">/**
+     * 寄生组合继承实现，为了能实现堆栈信息的保留，使用这种特殊的js原型继承模式。
+     * 如果使用简单的prototype = new Error()的继承模式。Error的堆栈信息永远指向这个文件，
+     * 而不能把真正错误的语句的代码位置显示出来，故使用“寄生组合继承”这种继承方式
+     */</span>
+    <span class="token keyword">function</span> <span class="token function">inheritPrototype</span><span class="token punctuation">(</span>subType<span class="token punctuation">,</span> superType<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">function</span> <span class="token function">F</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+        F<span class="token punctuation">.</span>prototype <span class="token operator">=</span> superType<span class="token punctuation">.</span>prototype<span class="token punctuation">;</span>
+        <span class="token keyword">var</span> prototype <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">F</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        prototype<span class="token punctuation">.</span>constructor <span class="token operator">=</span> subType<span class="token punctuation">;</span>
+        subType<span class="token punctuation">.</span>prototype <span class="token operator">=</span> prototype<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    
+    <span class="token comment">//注册的几个系统异常</span>
+    <span class="token comment">/**
+     * 用户取消异常
+     * @param {Object} err            错误源
+     */</span>
+    <span class="token keyword">function</span> <span class="token function">UserCancelException</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        errorFactory<span class="token punctuation">.</span>BaseException<span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span><span class="token string">"userCancel"</span><span class="token punctuation">,</span>err<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">inheritPrototype</span><span class="token punctuation">(</span>UserCancelException<span class="token punctuation">,</span>errorFactory<span class="token punctuation">.</span>BaseException<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    errorFactory<span class="token punctuation">.</span><span class="token function-variable function">userCancel</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">UserCancelException</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">function</span> <span class="token function">UserCancelHandle</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">//用户取消异常，什么也不做</span>
+    <span class="token punctuation">}</span>
+    errorManager<span class="token punctuation">.</span><span class="token function">registerError</span><span class="token punctuation">(</span><span class="token string">"userCancel"</span><span class="token punctuation">,</span>UserCancelHandle<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    
+    <span class="token comment">/**
+     * 初始化异常
+     * @param {Object} level        错误的级别
+     * @param {Object} err            错误源
+     */</span>
+    <span class="token keyword">function</span> <span class="token function">InitException</span><span class="token punctuation">(</span>level<span class="token punctuation">,</span>err<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        errorFactory<span class="token punctuation">.</span>BaseException<span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span><span class="token string">"init"</span><span class="token punctuation">,</span>err<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>level <span class="token operator">=</span> level<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">inheritPrototype</span><span class="token punctuation">(</span>InitException<span class="token punctuation">,</span>errorFactory<span class="token punctuation">.</span>BaseException<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    errorFactory<span class="token punctuation">.</span><span class="token function-variable function">InitCancel</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>level<span class="token punctuation">,</span>err<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">InitException</span><span class="token punctuation">(</span>level<span class="token punctuation">,</span>err<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">function</span> <span class="token function">InitHandle</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">//根据不同的错误级别做出不同的处理</span>
+        <span class="token keyword">switch</span> <span class="token punctuation">(</span>err<span class="token punctuation">.</span>level<span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">default</span><span class="token punctuation">:</span>
+                <span class="token comment">//根据不同的错误级别做出不同的处理策略，这里仅给出错误提示</span>
+                <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">"应用初始化时发生错误！"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token keyword">break</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    errorManager<span class="token punctuation">.</span><span class="token function">registerError</span><span class="token punctuation">(</span><span class="token string">"init"</span><span class="token punctuation">,</span>InitHandle<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    
+    <span class="token comment">/**
+     * 网络异常
+     * @param {Object} err            错误源
+     */</span>
+    <span class="token keyword">function</span> <span class="token function">HttpException</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        errorFactory<span class="token punctuation">.</span>BaseException<span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span><span class="token string">"http"</span><span class="token punctuation">,</span>err<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">inheritPrototype</span><span class="token punctuation">(</span>HttpException<span class="token punctuation">,</span>errorFactory<span class="token punctuation">.</span>BaseException<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    errorFactory<span class="token punctuation">.</span><span class="token function-variable function">http</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">HttpException</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">function</span> <span class="token function">HttpHandle</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">//提示链接不到服务器</span>
+        <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">"无法访问到服务器！"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    errorManager<span class="token punctuation">.</span><span class="token function">registerError</span><span class="token punctuation">(</span><span class="token string">"http"</span><span class="token punctuation">,</span>HttpHandle<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    
+    <span class="token comment">/**
+     * 服务器异常，如果服务器传来了服务器错误信息，就提示服务器错误信息，否则就执行默认的错误提示
+     * @param {String} serverMsg    服务器端发来的错误提示
+     * @param {Object} err            错误源
+     */</span>
+    <span class="token keyword">function</span> <span class="token function">ServerException</span><span class="token punctuation">(</span>serverMsg<span class="token punctuation">,</span>err<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>err<span class="token punctuation">)</span><span class="token punctuation">{</span>
+            err <span class="token operator">=</span> serverMsg<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+            <span class="token keyword">this</span><span class="token punctuation">.</span>serverMsg <span class="token operator">=</span> serverMsg<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        errorFactory<span class="token punctuation">.</span>BaseException<span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">,</span><span class="token string">"server"</span><span class="token punctuation">,</span>err<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token function">inheritPrototype</span><span class="token punctuation">(</span>ServerException<span class="token punctuation">,</span>errorFactory<span class="token punctuation">.</span>BaseException<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    errorFactory<span class="token punctuation">.</span><span class="token function-variable function">server</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span>serverMsg<span class="token punctuation">,</span>err<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">throw</span> <span class="token keyword">new</span> <span class="token class-name">ServerException</span><span class="token punctuation">(</span>serverMsg<span class="token punctuation">,</span>err<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">function</span> <span class="token function">ServerHandle</span><span class="token punctuation">(</span>err<span class="token punctuation">,</span>defaultHandle<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">//提示链接不到服务器</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>err<span class="token punctuation">.</span>serverMsg <span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token function">alert</span><span class="token punctuation">(</span>err<span class="token punctuation">.</span>serverMsg<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+            <span class="token function">defaultHandle</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    errorManager<span class="token punctuation">.</span><span class="token function">registerError</span><span class="token punctuation">(</span><span class="token string">"server"</span><span class="token punctuation">,</span>ServerHandle<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    
+    <span class="token keyword">return</span> errorFactory<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre>
+                </figure><p class="mydoc_p"> 异常的统一处理函数是errorManager.handleErr(otherHandle,error)。这个方法要求用户传递一个默认的提示语句或者异常处理函数，如果异常不能使用已经注册的处理方法处理，就使用这个默认的处理策略，否则就按照注册的处理策略去处理异常。</p><p class="mydoc_p"> 在errorFactory中，定义了几种系统异常。这些异常继承方式采用寄生组合继承，这个继承方法没有对外暴漏，用户要注册自己的异常的话，需要自己实现寄生组合继承。而异常的原型errorFactory.BaseException则暴漏给用户，用户必须让自己定义的异常类，寄生组合继承于此类。</p>
+                    </div>
+                </div><div class="mydoc_h2">
+                    <a class="mydoc_h2_a">
+                        <h2 class="mydoc_h2_h2">三、统一异常处理的使用</h2>
+                    </a>
+                    <div class="mydoc_h1_content">
+                        <p class="mydoc_p"> 每一个controller中的事件都要用$def.resolve()开头，这样主要是防止第一个promise创建之前也会出现异常，我们用一个promise把所有的代码包含进入，这样就不用担心在promise创建之前会出现异常的情况了。在最后一步我们去catch这个promise的所抛出的异常（如果有的话），用then(null,onreject)语句去捕获异常，因为各个promise库对捕获语句的关键字定义不同（如jq是用fail，而angular是用catch），所以使用then是兼容性是最好的写法。</p><p class="mydoc_p"> 一个标准的模板代码块如下：</p><figure class='mydoc_code'>
+                    <pre class="mydoc_code_pre cm-s-eclipse"><span class="token keyword">return</span> $def<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token comment">//业务代码</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">,</span><span class="token keyword">function</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token comment">//调用统一异常处理，处理异常情况</span>
+        eM<span class="token punctuation">.</span><span class="token function">handleErr</span><span class="token punctuation">(</span><span class="token string">"默认的异常处理语句"</span><span class="token punctuation">,</span>err<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre>
+                </figure><p class="mydoc_p"> 以下是例子中controller的代码：</p><figure class='mydoc_code'>
+                    <pre class="mydoc_code_pre cm-s-eclipse"><span class="token comment">//创建avalon的controller和定义vm</span>
+<span class="token keyword">var</span> todoController <span class="token operator">=</span> avalon<span class="token punctuation">.</span><span class="token function">define</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    $id<span class="token punctuation">:</span> <span class="token string">"todo"</span><span class="token punctuation">,</span>
+    <span class="token comment">//todo的列表</span>
+    todolist <span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token comment">//删除todo</span>
+    deleteTodo <span class="token punctuation">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span>todo<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">return</span> $def<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span><span class="token function">confirm</span><span class="token punctuation">(</span><span class="token string">"确定要删除吗？"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                <span class="token comment">//直接抛出用户取消异常，这样不用管后面逻辑如何，都会进入handleErr里。而用户取消异常的handleErr什么都不做</span>
+                eF<span class="token punctuation">.</span><span class="token function">userCancel</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">return</span> todoService<span class="token punctuation">.</span><span class="token function">deleteTodo</span><span class="token punctuation">(</span>todo<span class="token punctuation">.</span>id<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">,</span><span class="token keyword">function</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token comment">//调用统一异常处理，处理异常情况</span>
+            eM<span class="token punctuation">.</span><span class="token function">handleErr</span><span class="token punctuation">(</span><span class="token string">"删除todo提交失败！"</span><span class="token punctuation">,</span>err<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token comment">//完成todo</span>
+    finishTodo <span class="token punctuation">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span>todo<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">return</span> $def<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">return</span> todoService<span class="token punctuation">.</span><span class="token function">finishTodo</span><span class="token punctuation">(</span>todo<span class="token punctuation">.</span>id<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">,</span><span class="token keyword">function</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token comment">//调用统一异常处理，处理异常情况</span>
+            eM<span class="token punctuation">.</span><span class="token function">handleErr</span><span class="token punctuation">(</span><span class="token string">"完成todo提交失败！"</span><span class="token punctuation">,</span>err<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token comment">//重做todo</span>
+    redoTodo <span class="token punctuation">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span>todo<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">return</span> $def<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">return</span> todoService<span class="token punctuation">.</span><span class="token function">redoTodo</span><span class="token punctuation">(</span>todo<span class="token punctuation">.</span>id<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">,</span><span class="token keyword">function</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token comment">//调用统一异常处理，处理异常情况</span>
+            eM<span class="token punctuation">.</span><span class="token function">handleErr</span><span class="token punctuation">(</span><span class="token string">"重做todo提交失败！（这个是默认的提示）"</span><span class="token punctuation">,</span>err<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre>
+                </figure><p class="mydoc_p"> 上述代码中deleteTodo、finishTodo 和redoTodo 三个函数就是页面事件的响应函数，只需在这里使用统一异常处理就完成了所有的异常处理了。统一异常处理的核心就是在边界类中做统一的一次异常处理，而处理的对象就是底层代码无法处理的异常。事实上实际代码开发中，绝大部分异常都是底层代码无法处理的，需要向上抛出，而使用统一异常处理后异常处理代码就变得非常简单了。</p>
+                    </div>
+                </div><div class="mydoc_h2">
+                    <a class="mydoc_h2_a">
+                        <h2 class="mydoc_h2_h2">四、几种系统异常的封装</h2>
+                    </a>
+                    <div class="mydoc_h1_content">
+                        <p class="mydoc_p"> 同时，我们需要将一些特定异常包装成系统异常，这些在上一篇有提及，具体实现如下：</p><div class="mydoc_h3">
+                <a class="mydoc_h3_a">
+                    <h3 class="mydoc_h3_h3">1.用户取消异常</h3>
+                </a>
+                <div class="mydoc_h3_content">
+                    <p class="mydoc_p"> 这是一个使用频率比较高的异常，用户所有的取消动作都可以让其抛出这个异常。如下面代码：</p><figure class='mydoc_code'>
+                    <pre class="mydoc_code_pre cm-s-eclipse"><span class="token comment">//删除todo</span>
+deleteTodo <span class="token punctuation">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span>todo<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">return</span> $def<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span><span class="token function">confirm</span><span class="token punctuation">(</span><span class="token string">"确定要删除吗？"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token comment">//直接抛出用户取消异常，这样不用管后面逻辑如何，都会进入handleErr里。而用户取消异常的handleErr什么都不做</span>
+            eF<span class="token punctuation">.</span><span class="token function">userCancel</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">return</span> todoService<span class="token punctuation">.</span><span class="token function">deleteTodo</span><span class="token punctuation">(</span>todo<span class="token punctuation">.</span>id<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">,</span><span class="token keyword">function</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token comment">//调用统一异常处理，处理异常情况</span>
+        eM<span class="token punctuation">.</span><span class="token function">handleErr</span><span class="token punctuation">(</span><span class="token string">"删除todo提交失败！"</span><span class="token punctuation">,</span>err<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span></pre>
+                </figure><p class="mydoc_p"> 当用户取消异常抛出之后，就会直接进入到catch语句中的handleErr里，而我们在handleErr里注册的策略是什么也没有做，不会写日志或者弹出错误警告。这样我们不用专门为用户取消事件去写一个分支，处理起来清晰简单。</p>
+                </div>
+            </div><div class="mydoc_h3">
+                <a class="mydoc_h3_a">
+                    <h3 class="mydoc_h3_h3">2.网络异常和服务器异常</h3>
+                </a>
+                <div class="mydoc_h3_content">
+                    <p class="mydoc_p"> 这两个异常都是对http请求中的响应封装。网络异常需要大家精通http协议，知道什么错误是网络本身引起的。服务器异常还需要我们和服务器建立一个协议，这样能够获得服务器抛出的异常信息（如果这个信息有必要给用户看）。所以这两个请求都需要对ajax进行封装，封装的事例如下：</p><figure class='mydoc_code'>
+                    <pre class="mydoc_code_pre cm-s-eclipse"><span class="token comment">/**
+ * 基于jq负责发送ajax的方法
+ */</span>
+<span class="token function">define</span><span class="token punctuation">(</span><span class="token string">"$ajax"</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token string">'$'</span><span class="token punctuation">,</span><span class="token string">'errorFactory'</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token keyword">function</span><span class="token punctuation">(</span>$<span class="token punctuation">,</span>eF<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">function</span><span class="token punctuation">(</span>option<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">return</span> $<span class="token punctuation">.</span><span class="token function">ajax</span><span class="token punctuation">(</span>option<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">promise</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token comment">//将失败的ajax调用封装成</span>
+        <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">,</span><span class="token keyword">function</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token comment">//如果是status为0，表示超时取消或者ajax终止，提交http请求异常。如果状态为502是网关错误，表示当前网路还是连接不上服务器</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>err<span class="token punctuation">.</span>status <span class="token operator">==</span> <span class="token number">0</span> <span class="token operator">||</span> err<span class="token punctuation">.</span>status <span class="token operator">==</span> <span class="token number">502</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                <span class="token keyword">throw</span> eF<span class="token punctuation">.</span><span class="token function">http</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span> <span class="token keyword">else</span><span class="token punctuation">{</span>
+                <span class="token comment">//否则，需要根据服务器端做好接口，通过responseText判断出是服务器端异常，把服务器端传递来的消息提示出去</span>
+                <span class="token comment">//这里只是示意的代码，需要根据服务器端具体情况具体处理</span>
+                <span class="token keyword">if</span><span class="token punctuation">(</span>err<span class="token punctuation">.</span>responseText<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token string">"{"</span>msg<span class="token string">":"</span><span class="token punctuation">)</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                    <span class="token keyword">throw</span> eF<span class="token punctuation">.</span><span class="token function">server</span><span class="token punctuation">(</span>JSON<span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>err<span class="token punctuation">.</span>responseText<span class="token punctuation">)</span><span class="token punctuation">.</span>msg <span class="token punctuation">,</span>err<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+                <span class="token comment">//以上情况都不符合，直接把原始异常向上抛出</span>
+                <span class="token keyword">throw</span> err<span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span></pre>
+                </figure><p class="mydoc_p"> 起初我准备设置$.ajax默认的error事件，在那里把原始异常封装，但是后来发现在error事件中抛出的错误无法抛给promise里，所以我们只能直接对promise进行catch，将异常包装一下。这样如果用户是使用$ajax请求的异步处理都可以自动地封装成两个异常。不过这样也有个缺点，就是第三方的应用的ajax不能被自动封装，因为他们使用的是jq的$.ajax接口，所有需要我们自己去用promise将第三方的插件封装。这一点jq可以改进一下，提供一个类似beforeSend的beforeError方法，或者能够把error的错误抛到promise里。</p><p class="mydoc_p"> 上边的代码中，我们定义服务器的错误协议是以“{&quot;msg&quot;:”开头才行，而不符合这个协议的异常全部以原始异常的形式向上抛出。</p>
+                </div>
+            </div><div class="mydoc_h3">
+                <a class="mydoc_h3_a">
+                    <h3 class="mydoc_h3_h3">3.表单的异常</h3>
+                </a>
+                <div class="mydoc_h3_content">
+                    <p class="mydoc_p"> 很遗憾由于时间的关系我们没有把表单异常的处理方案分享给大家，主要是表单异常处理起来是很麻烦的。表单异常其实就是表单校验的错误，而表单校验一部分是属于view层负责的功能，例如必填项，或者是内容的正则判断，这些在视图层上完成最适合了；但是还是有一部分却是需要和后台交互，是service层的业务，例如从服务器中查询用户名和密码是否正确的登录验证，这样我们需要在controller层将这种错误封装为表单异常，在抛给统一异常处理，而统一异常处理也需要使用和视图层相同的方式去提示错误，因此表单异常处理本身也需要支持错误处理策略的注册功能。整个过程涉及到mvc的各个层次，这个就留给大家自己去实现吧。</p>
+                </div>
+            </div><div class="mydoc_h3">
+                <a class="mydoc_h3_a">
+                    <h3 class="mydoc_h3_h3">4.非系统异常</h3>
+                </a>
+                <div class="mydoc_h3_content">
+                    <p class="mydoc_p"> 我们每一个统一异常处理（handleErr）的调用，都会有一个默认的处理方法，这个可以一个字符串，也可以是一个function，他们是用于统一异常处理无法找到注册的系统异常handle去处理异常时候调用的方法。当出现非系统异常的时候，我们handleErr还是可以采用一种默认的异常提示方案。事实上实际项目中，系统异常并不多，大多数都是那些无法被包装成系统异常的异常。对于这种异常，一定要把错误的源打印到日志里，这样才能方便大家调试。</p><p class="mydoc_p"> 例如demo中的redoTodo事件，底层todoService.redoTodo方法抛出的是非系统异常，所以错误提示会显示eM.handleErr第一个参数提供的默认的提示语句。</p><figure class='mydoc_code'>
+                    <pre class="mydoc_code_pre cm-s-eclipse"><span class="token comment">//重做todo</span>
+redoTodo <span class="token punctuation">:</span> <span class="token keyword">function</span><span class="token punctuation">(</span>todo<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">return</span> $def<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">return</span> todoService<span class="token punctuation">.</span><span class="token function">redoTodo</span><span class="token punctuation">(</span>todo<span class="token punctuation">.</span>id<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">,</span><span class="token keyword">function</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token comment">//调用统一异常处理，处理异常情况</span>
+        eM<span class="token punctuation">.</span><span class="token function">handleErr</span><span class="token punctuation">(</span><span class="token string">"重做todo提交失败！（这个是默认的提示）"</span><span class="token punctuation">,</span>err<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span></pre>
+                </figure>
+                </div>
+            </div><div class="mydoc_h3">
+                <a class="mydoc_h3_a">
+                    <h3 class="mydoc_h3_h3">5.自定义系统异常</h3>
+                </a>
+                <div class="mydoc_h3_content">
+                    <p class="mydoc_p"> 所有异常的原型errorFactory.BaseException是暴漏给用户了，所有用户可以自己去注册自己的异常处理方案。这个demo的注册代码和异常的寄生组合继承过程有点复杂，是可以简化的，这个也留给大家自己去探索如何去简化异常的继承和注册吧。自定义异常的具体注册过程可以参考errorFactory中的系统异常定义。</p>
+                </div>
+            </div>
+                    </div>
+                </div><div class="mydoc_h2">
+                    <a class="mydoc_h2_a">
+                        <h2 class="mydoc_h2_h2">五、总结</h2>
+                    </a>
+                    <div class="mydoc_h1_content">
+                        <p class="mydoc_p"> 我们项目使用了统一异常处理策略后，分层实现起来更简单了，每一层的代码只需要思考自己正确的业务逻辑，遇到错误就直接向上抛出，是符合责任链模式的；同时异常提示也做的更准确了，基本上每一个错误都能提示给用户，不会出现系统提示成功，而实际上却是错误的情况。</p><p class="mydoc_p"> 虽然统一的异常处理策略实现起来成本比较高，但是还是很有实现意义的，而且即便是ie8这种低端浏览器也是兼容的，兼容性也有保障的。这里只是抛砖引玉，随着前端业务越来越复杂，统一的异常处理策略是非常必要的，实现方法肯定也会因项目而异的。</p>
+                    </div>
+                </div>
+                </div>
+            </div>
+                </article>
